@@ -1,0 +1,2224 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lời Mời Tốt Nghiệp - Phan Nguyễn Gia Tuệ</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Montserrat:ital,wght@0,300..900;1,300..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+        rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- html2canvas for Invitation Download -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+
+    <style>
+        /* =========================================
+           DESIGN TOKENS & BASE STYLES
+           ========================================= */
+        :root {
+            --bg-color: #d2d2cf;
+            --accent-main: #F4A6B7;
+            --accent-dark: #8B2635;
+            --card-bg: #EFE6D8;
+            --text-dark: #1A1A1A;
+            --text-light: #FBF6EE;
+
+            --font-script: 'Dancing Script', cursive;
+            --font-heading: 'Playfair Display', serif;
+            --font-body: 'Montserrat', sans-serif;
+
+            --transition: all 0.3s ease;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
+            }
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background-color: var(--bg-color);
+            color: var(--text-dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+            position: relative;
+            background-image: url('data:image/svg+xml;utf8,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><filter id="noise"><feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="4" stitchTiles="stitch"/></filter><rect width="100" height="100" filter="url(%23noise)" opacity="0.03"/></svg>');
+        }
+
+        body.locked {
+            overflow: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Tiện ích Scrapbook */
+        .polaroid {
+            background: #fff;
+            padding: 10px 10px 40px 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            position: relative;
+            border: 1px solid #eee;
+        }
+
+        .paper-shadow {
+            box-shadow: 2px 4px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        .btn-primary {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+            background-color: var(--accent-dark);
+            color: var(--text-light);
+            padding: 12px 28px;
+            border-radius: 50px;
+            font-family: var(--font-body);
+            font-weight: 600;
+            font-size: 0.95rem;
+            border: none;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .btn-primary:hover,
+        .btn-primary:focus {
+            background-color: #6a1a26;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(139, 38, 53, 0.3);
+            outline: 2px solid var(--accent-main);
+            outline-offset: 2px;
+        }
+
+        .section-title {
+            font-family: var(--font-heading);
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 2rem;
+            color: var(--accent-dark);
+        }
+
+        .eyebrow {
+            font-family: var(--font-body);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #666;
+            text-align: center;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        section {
+            padding: 80px 20px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        /* =========================================
+           0. ENVELOPE INTRO
+           ========================================= */
+        #envelope-intro {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: var(--bg-color);
+            z-index: 9999;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            transition: opacity 1s ease, transform 1s ease;
+        }
+
+        .intro-decor-svg {
+            position: absolute;
+            opacity: 0.7;
+            pointer-events: none;
+        }
+
+        @keyframes floatRandom1 {
+            0% {
+                transform: translate(0, 0) rotate(0deg);
+            }
+
+            50% {
+                transform: translate(20px, -20px) rotate(15deg);
+            }
+
+            100% {
+                transform: translate(0, 0) rotate(0deg);
+            }
+        }
+
+        @keyframes floatRandom2 {
+            0% {
+                transform: translate(0, 0) rotate(0deg);
+            }
+
+            50% {
+                transform: translate(-15px, -30px) rotate(-10deg);
+            }
+
+            100% {
+                transform: translate(0, 0) rotate(0deg);
+            }
+        }
+
+        .intro-side-img {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 28vw;
+            max-width: 450px;
+            z-index: 1;
+            opacity: 0;
+            animation: fadeInSides 1.5s ease forwards 0.5s;
+            object-fit: contain;
+        }
+
+        .img-left {
+            right: 50%;
+            margin-right: 270px;
+        }
+
+        .img-right {
+            left: 50%;
+            margin-left: 270px;
+        }
+
+        @keyframes fadeInSides {
+            from {
+                opacity: 0;
+                transform: translateY(-40%);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(-50%);
+            }
+        }
+
+        @media (max-width: 992px) {
+            .intro-side-img {
+                display: none;
+            }
+        }
+
+        .intro-titles {
+            text-align: center;
+            margin-bottom: 40px;
+            z-index: 2;
+        }
+
+        .intro-titles h1 {
+            font-family: var(--font-heading);
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: #7a0000;
+            line-height: 1.2;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.05);
+        }
+
+        .intro-titles h2 {
+            font-family: var(--font-script);
+            font-size: 2rem;
+            color: #1a1a1a;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+        }
+
+        .envelope-container {
+            position: relative;
+            width: 650px;
+            max-width: 90vw;
+            cursor: pointer;
+            z-index: 10;
+        }
+
+        @keyframes heartbeat {
+            0% {
+                transform: scale(1);
+            }
+
+            14% {
+                transform: scale(1.03);
+            }
+
+            28% {
+                transform: scale(1);
+            }
+
+            42% {
+                transform: scale(1.03);
+            }
+
+            70% {
+                transform: scale(1);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        .envelope-container:not(.open) {
+            animation: heartbeat 2s infinite cubic-bezier(0.215, 0.61, 0.355, 1);
+        }
+
+        .letter-img {
+            width: 100%;
+            height: auto;
+        }
+
+        .letter-close {
+            display: block;
+            transition: opacity 0.4s ease;
+        }
+
+        .letter-open {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .envelope-container.open .letter-close {
+            opacity: 0;
+        }
+
+        .envelope-container.open .letter-open {
+            opacity: 1;
+        }
+
+        .click-hint {
+            font-family: var(--font-body);
+            font-size: 0.8rem;
+            letter-spacing: 4px;
+            margin-top: 50px;
+            color: #888;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                opacity: 0.5;
+            }
+
+            50% {
+                opacity: 1;
+            }
+
+            100% {
+                opacity: 0.5;
+            }
+        }
+
+        /* =========================================
+           1. HEADER
+           ========================================= */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 15px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: var(--transition);
+            background: transparent;
+        }
+
+        header.scrolled {
+            background: rgba(251, 246, 238, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            padding: 10px 40px;
+        }
+
+        .logo {
+            flex: 1;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            font-family: var(--font-heading);
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--accent-dark);
+        }
+
+        nav {
+            flex: 2;
+            display: flex;
+            justify-content: center;
+        }
+
+        .header-cta {
+            flex: 1;
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: color 0.3s;
+        }
+
+        nav a:hover,
+        nav a:focus {
+            color: var(--accent-dark);
+        }
+
+        .menu-toggle {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        @media (max-width: 768px) {
+            header {
+                padding: 15px 20px;
+            }
+
+            nav {
+                display: none;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            .header-cta {
+                display: none;
+            }
+        }
+
+        /* =========================================
+           2. HERO SECTION
+           ========================================= */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            padding-top: 100px;
+            overflow: hidden;
+        }
+
+        .hero-bg-text {
+            position: absolute;
+            font-family: var(--font-heading);
+            font-size: 15vw;
+            color: rgba(122, 0, 0, 0.15);
+            text-align: center;
+            line-height: 0.8;
+            z-index: -1;
+            white-space: nowrap;
+        }
+
+        .hero-content {
+            z-index: 2;
+        }
+
+        .invitation-card {
+            background: var(--card-bg);
+            padding: 40px;
+            border-radius: 4px;
+            box-shadow: 5px 10px 30px rgba(0, 0, 0, 0.1);
+            max-width: 450px;
+            width: 100%;
+            text-align: center;
+            transform: rotate(-2deg);
+            position: relative;
+        }
+
+        /* Washi tape */
+        .washi-tape {
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%) rotate(-3deg);
+            width: 100px;
+            height: 35px;
+            background: rgba(255, 255, 255, 0.6);
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            z-index: 10;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .photo-frame {
+            width: 100%;
+            height: 300px;
+            background: #ddd;
+            margin-bottom: 20px;
+            border: 8px solid #fff;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .photo-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .name-script {
+            font-family: var(--font-script);
+            font-size: 3rem;
+            color: var(--accent-dark);
+            margin-bottom: 5px;
+            line-height: 1;
+        }
+
+        .class-year {
+            font-weight: bold;
+            letter-spacing: 2px;
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+        }
+
+        .event-details p {
+            margin-bottom: 8px;
+            font-size: 0.95rem;
+        }
+
+
+
+        /* =========================================
+           3. CTA ISOLATED
+           ========================================= */
+        .cta-section {
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        /* =========================================
+           4. THƯ CẢM ƠN
+           ========================================= */
+        .thankyou-letter {
+            background: #fff;
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 50px;
+            border-radius: 2px;
+            position: relative;
+            background-image: repeating-linear-gradient(transparent, transparent 31px, #e0e0e0 31px, #e0e0e0 32px);
+            line-height: 32px;
+            box-shadow: 3px 5px 15px rgba(0, 0, 0, 0.05);
+            transform: rotate(1deg);
+        }
+
+        .thankyou-letter::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 40px;
+            bottom: 0;
+            width: 2px;
+            background: rgba(244, 166, 183, 0.5);
+        }
+
+        .thankyou-content {
+            font-family: var(--font-script);
+            font-size: 1.5rem;
+            color: #333;
+            padding-left: 20px;
+        }
+
+        .signature {
+            text-align: right;
+            margin-top: 30px;
+        }
+
+        /* =========================================
+           5. ẢNH + CAPTION
+           ========================================= */
+        .photo-caption-section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .polaroid-wrapper {
+            transform: rotate(-3deg);
+            max-width: 350px;
+        }
+
+        .polaroid-caption {
+            font-family: var(--font-script);
+            text-align: center;
+            font-size: 1.5rem;
+            margin-top: 15px;
+            color: var(--accent-dark);
+        }
+
+        /* =========================================
+           6. FORM RSVP
+           ========================================= */
+        .rsvp-section {
+            background-color: var(--card-bg);
+        }
+
+        .rsvp-container {
+            background: #fff;
+            padding: 50px;
+            border-radius: 8px;
+            max-width: 600px;
+            margin: 0 auto;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-family: var(--font-body);
+            transition: var(--transition);
+        }
+
+        .form-control:focus {
+            border-color: var(--accent-dark);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(139, 38, 53, 0.1);
+        }
+
+        .attendance-options {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        @media (max-width: 600px) {
+            .attendance-options {
+                flex-direction: column;
+            }
+        }
+
+        .radio-pill {
+            flex: 1;
+            position: relative;
+        }
+
+        .radio-pill input {
+            position: absolute;
+            opacity: 0;
+            cursor: pointer;
+        }
+
+        .radio-pill label {
+            display: block;
+            padding: 15px 10px;
+            text-align: center;
+            background: #f5f5f5;
+            border: 2px solid transparent;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: var(--transition);
+            font-weight: 600;
+            font-size: 0.85rem;
+        }
+
+        .radio-pill input:checked+label {
+            background: #fff;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        #status-yes:checked+label {
+            border-color: #4CAF50;
+            color: #4CAF50;
+        }
+
+        #status-maybe:checked+label {
+            border-color: #FFC107;
+            color: #FF9800;
+        }
+
+        #status-no:checked+label {
+            border-color: #F44336;
+            color: #F44336;
+        }
+
+        .form-message {
+            display: none;
+            padding: 15px;
+            border-radius: 4px;
+            margin-top: 20px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .form-message.success {
+            background: #e8f5e9;
+            color: #2e7d32;
+            display: block;
+        }
+
+        .form-message.error {
+            background: #ffebee;
+            color: #c62828;
+            display: block;
+        }
+
+        /* =========================================
+           7. LƯU BÚT
+           ========================================= */
+        .guestbook-carousel {
+            display: flex;
+            gap: 20px;
+            overflow-x: auto;
+            padding: 20px 10px;
+            scrollbar-width: none;
+        }
+
+        .guestbook-carousel::-webkit-scrollbar {
+            display: none;
+        }
+
+        .sticky-note {
+            min-width: 320px;
+            max-width: 320px;
+            background: #fff;
+            padding: 30px 20px;
+            box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.1);
+            position: relative;
+            font-family: var(--font-script);
+            font-size: 1.3rem;
+            display: flex;
+            flex-direction: column;
+            height: auto;
+            animation: fallIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+        }
+
+        @keyframes fallIn {
+            from {
+                opacity: 0;
+                transform: translateY(-50px) rotate(5deg);
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        .note-text {
+            flex-grow: 1;
+            margin-bottom: 20px;
+            white-space: pre-wrap;
+            line-height: 1.5;
+            color: #333;
+        }
+
+        .note-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-family: var(--font-body);
+            font-size: 0.8rem;
+            border-bottom: 1px dashed #ccc;
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+        }
+
+        .note-author {
+            font-weight: bold;
+            text-transform: uppercase;
+            color: #111;
+        }
+
+        .badge {
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-weight: bold;
+            font-size: 0.7rem;
+        }
+
+        .badge.status-yes {
+            background: #e8f5e9;
+            color: #2e7d32;
+        }
+
+        .badge.status-maybe {
+            background: #fff8e1;
+            color: #ff8f00;
+        }
+
+        .badge.status-no {
+            background: #ffebee;
+            color: #c62828;
+        }
+
+        /* =========================================
+           8. GALLERY PHIM
+           ========================================= */
+        .film-gallery {
+            background-color: #111;
+            padding: 60px 0;
+            position: relative;
+            overflow: hidden;
+            border-top: 20px dotted #222;
+            border-bottom: 20px dotted #222;
+        }
+
+        .film-text {
+            color: #FFC107;
+            text-align: center;
+            font-family: var(--font-heading);
+            font-size: 1.5rem;
+            margin-bottom: 40px;
+            padding: 0 20px;
+        }
+
+        .marquee-container {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .marquee-row {
+            display: flex;
+            gap: 10px;
+            width: max-content;
+        }
+
+        .marquee-row:hover {
+            animation-play-state: paused;
+        }
+
+        .slide-left {
+            animation: slideLeft 25s linear infinite;
+        }
+
+        .slide-right {
+            animation: slideRight 25s linear infinite;
+        }
+
+        @keyframes slideLeft {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(calc(-50% - 5px));
+            }
+        }
+
+        @keyframes slideRight {
+            0% {
+                transform: translateX(calc(-50% - 5px));
+            }
+
+            100% {
+                transform: translateX(0);
+            }
+        }
+
+        .gallery-item {
+            width: 250px;
+            height: 250px;
+            flex-shrink: 0;
+            background: #333;
+            overflow: hidden;
+            border: 2px solid #000;
+            cursor: pointer;
+        }
+
+        @media (max-width: 768px) {
+            .gallery-item {
+                width: 150px;
+                height: 150px;
+            }
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: grayscale(20%);
+            transition: var(--transition);
+        }
+
+        .gallery-item:hover img {
+            filter: grayscale(0%);
+            transform: scale(1.05);
+        }
+
+        .gallery-section::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background:
+                url('data:image/svg+xml;utf8,<svg width="250" height="250" xmlns="http://www.w3.org/2000/svg"><filter id="noise"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="3" stitchTiles="stitch"/></filter><rect width="250" height="250" filter="url(%23noise)" opacity="0.6"/></svg>'),
+                linear-gradient(90deg, transparent 50%, rgba(255, 255, 255, 0.5) 50.5%, transparent 51%),
+                linear-gradient(90deg, transparent 30%, rgba(0, 0, 0, 0.6) 30.5%, transparent 31%);
+            background-size: 250px 250px, 200% 100%, 150% 100%;
+            pointer-events: none;
+            z-index: 6;
+            mix-blend-mode: overlay;
+            animation: scratchAnim 0.3s infinite steps(2), filmFlicker 0.12s infinite alternate;
+        }
+
+        .gallery-section::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle, rgba(173, 114, 52, 0.3) 10%, rgba(30, 15, 0, 0.95) 100%);
+            mix-blend-mode: multiply;
+            pointer-events: none;
+            z-index: 5;
+            animation: vignetteFlicker 3s infinite alternate;
+        }
+
+        @keyframes filmFlicker {
+            0% {
+                opacity: 0.7;
+            }
+
+            100% {
+                opacity: 0.95;
+            }
+        }
+
+        @keyframes vignetteFlicker {
+            0% {
+                opacity: 0.8;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        @keyframes scratchAnim {
+            0% {
+                background-position: 0 0, 10% 0, 80% 0;
+            }
+
+            50% {
+                background-position: -20px -20px, 70% 0, 20% 0;
+            }
+
+            100% {
+                background-position: 10px 10px, 40% 0, 50% 0;
+            }
+        }
+
+        /* =========================================
+           9. LƯU LẠI NGÀY NÀY & 10. LƯU Ý
+           ========================================= */
+        .save-date-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        @media (max-width: 768px) {
+            .save-date-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .info-card {
+            background: #fff;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        }
+
+        .info-item {
+            margin-bottom: 20px;
+            display: flex;
+            gap: 15px;
+        }
+
+        .info-item i {
+            color: var(--accent-dark);
+            font-size: 1.5rem;
+            margin-top: 5px;
+        }
+
+        .map-container {
+            width: 100%;
+            height: 300px;
+            background: #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+            border: 5px solid #fff;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .notes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .notes-list {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            background: #fff;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+            text-align: left;
+        }
+
+        .note-row {
+            display: flex;
+            gap: 15px;
+            align-items: flex-start;
+            line-height: 1.6;
+        }
+
+        .note-row i {
+            color: var(--accent-dark);
+            font-size: 1.2rem;
+            margin-top: 4px;
+            min-width: 25px;
+            text-align: center;
+        }
+
+        .note-row strong {
+            color: var(--accent-dark);
+            margin-right: 5px;
+        }
+
+        .alert-row i {
+            color: var(--accent-dark);
+        }
+
+        .alert-row strong {
+            color: var(--accent-dark);
+        }
+
+        /* =========================================
+           11. COUNTDOWN
+           ========================================= */
+        .countdown-section {
+            text-align: center;
+        }
+
+        .countdown-timer {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 40px;
+        }
+
+        .time-box {
+            background: #fff;
+            width: 90px;
+            height: 90px;
+            border-radius: 8px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .time-value {
+            font-family: var(--font-heading);
+            font-size: 2.5rem;
+            color: var(--accent-dark);
+            line-height: 1;
+        }
+
+        .time-label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #888;
+            margin-top: 5px;
+        }
+
+        @media (max-width: 500px) {
+            .time-box {
+                width: 70px;
+                height: 70px;
+            }
+
+            .time-value {
+                font-size: 1.8rem;
+            }
+        }
+
+        /* =========================================
+           12. FOOTER & 13. AUDIO
+           ========================================= */
+        footer {
+            background: var(--text-dark);
+            color: #ccc;
+            padding: 60px 20px 20px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 40px;
+            max-width: 1000px;
+            margin: 0 auto;
+            margin-bottom: 40px;
+        }
+
+        @media (max-width: 768px) {
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .footer-logo {
+            font-family: var(--font-heading);
+            color: #fff;
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+        }
+
+        .footer-title {
+            color: #fff;
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-icons a {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            color: #fff;
+            transition: var(--transition);
+        }
+
+        .social-icons a:hover {
+            background: var(--accent-main);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+        }
+
+        .vinyl-player {
+            position: fixed;
+            bottom: 30px;
+            left: 30px;
+            z-index: 1000;
+            width: 140px;
+            height: 100px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+        }
+
+        .vinyl-sleeve {
+            position: absolute;
+            left: 0;
+            width: 100px;
+            height: 100px;
+            background: #e8e3d8;
+            border-radius: 2px;
+            box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.1);
+            z-index: 2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid #d4cdbd;
+        }
+
+        .sleeve-cutout {
+            width: 65px;
+            height: 65px;
+            border-radius: 50%;
+            background: #2a2a2a;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .sleeve-text {
+            color: #fff;
+            font-size: 0.55rem;
+            font-family: var(--font-body);
+            font-weight: 600;
+            text-transform: uppercase;
+            line-height: 1.2;
+        }
+
+        .vinyl-record {
+            position: absolute;
+            left: 10px;
+            width: 90px;
+            height: 90px;
+            background: #111;
+            border-radius: 50%;
+            z-index: 1;
+            transition: left 0.5s ease-in-out;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: inset 0 0 0 2px #222, inset 0 0 0 4px #111, inset 0 0 0 8px #222;
+        }
+
+        .vinyl-record::before {
+            content: '';
+            width: 35px;
+            height: 35px;
+            background: #b56c86;
+            border-radius: 50%;
+            position: absolute;
+        }
+
+        .vinyl-record::after {
+            content: '';
+            width: 6px;
+            height: 6px;
+            background: #fff;
+            border-radius: 50%;
+            position: absolute;
+        }
+
+        .vinyl-player.playing .vinyl-record {
+            left: 50px;
+            animation: spinRecord 3s linear infinite;
+        }
+
+        @keyframes spinRecord {
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        .music-notes {
+            position: absolute;
+            top: -20px;
+            left: 50%;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .vinyl-player.playing .music-notes {
+            opacity: 1;
+        }
+
+        .music-note {
+            position: absolute;
+            color: #ff69b4;
+            font-size: 1rem;
+            animation: floatNote 2s infinite linear;
+            animation-delay: var(--d);
+            opacity: 0;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+        }
+
+        .music-note:nth-child(1) {
+            left: 20%;
+        }
+
+        .music-note:nth-child(2) {
+            left: 50%;
+            font-size: 1.2rem;
+            color: #ffb6c1;
+        }
+
+        .music-note:nth-child(3) {
+            left: 80%;
+        }
+
+        @keyframes floatNote {
+            0% {
+                transform: translateY(0) scale(0.8);
+                opacity: 0;
+            }
+
+            20% {
+                opacity: 1;
+            }
+
+            80% {
+                opacity: 0.8;
+            }
+
+            100% {
+                transform: translateY(-40px) scale(1.2);
+                opacity: 0;
+            }
+        }
+
+        /* =========================================
+           14. MODAL TẠO THIỆP MỜI
+           ========================================= */
+        .modal-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.6);
+            z-index: 10000;
+            display: none;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .modal-content {
+            background: #FBF6EE;
+            border-radius: 8px;
+            width: 100%;
+            max-width: 500px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            max-height: 90vh;
+        }
+
+        .modal-header {
+            background: var(--accent-dark);
+            color: #fff;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .modal-header h3 {
+            font-family: var(--font-body);
+            font-size: 1.2rem;
+            margin: 0;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .close-btn {
+            background: none;
+            border: none;
+            color: #fff;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        .modal-body {
+            padding: 20px;
+            overflow-y: auto;
+        }
+
+        .modal-body p {
+            margin-bottom: 15px;
+            font-size: 0.95rem;
+        }
+
+        .input-shake {
+            animation: shake 0.5s;
+            border-color: red !important;
+        }
+
+        @keyframes shake {
+
+            0%,
+            100% {
+                transform: translateX(0);
+            }
+
+            25% {
+                transform: translateX(-5px);
+            }
+
+            75% {
+                transform: translateX(5px);
+            }
+        }
+
+        /* Cấu trúc preview thiệp trong modal */
+        .preview-wrapper {
+            background: none;
+            padding: 0;
+            border-radius: 4px;
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+            overflow: hidden;
+        }
+
+        #invitePreviewArea {
+            margin: 20px auto;
+            width: 100%;
+            max-width: 400px;
+            position: relative;
+            box-sizing: border-box;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .preview-title {
+            font-family: var(--font-script);
+            font-size: 2rem;
+            color: var(--accent-main);
+            margin-bottom: 15px;
+            line-height: 1;
+        }
+
+        .preview-photo {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border: 5px solid #fff;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            margin-bottom: 15px;
+        }
+
+        .preview-text {
+            font-family: var(--font-body);
+            font-size: 0.85rem;
+            margin-bottom: 5px;
+            color: #333;
+        }
+
+        .preview-guest {
+            font-family: var(--font-heading);
+            font-size: 1.2rem;
+            color: var(--accent-dark);
+            margin: 15px 0;
+            padding: 10px 0;
+            border-top: 1px dashed #ccc;
+            border-bottom: 1px dashed #ccc;
+            transition: opacity 0.3s;
+        }
+    </style>
+</head>
+
+<body class="locked">
+
+    <!-- 0. ENVELOPE INTRO -->
+    <div id="envelope-intro">
+        <img src="images/section/left.svg" class="intro-side-img img-left" alt="Left Decor"
+            onerror="this.style.display='none'">
+        <img src="images/section/right.svg" class="intro-side-img img-right" alt="Right Decor"
+            onerror="this.style.display='none'">
+
+        <div class="intro-titles">
+            <h1 class="intro-main">Graduation</h1>
+            <h2 class="intro-sub">Invitation</h2>
+        </div>
+
+        <div class="envelope-container" id="envelope-trigger">
+            <img src="images/section/close_letter.jpg" class="letter-img letter-close" alt="Closed Envelope">
+            <img src="images/section/open_letter.jpg" class="letter-img letter-open" alt="Opened Envelope">
+        </div>
+
+        <p class="click-hint">CLICK THE SEAL TO OPEN</p>
+    </div>
+
+    <!-- 1. HEADER -->
+    <header id="header">
+        <div class="logo">
+            <img src="images/section/logo.8e5334db.svg" alt="Logo"
+                style="height: 40px; width: auto; object-fit: contain;" onerror="this.src='logo.8e5334db.svg'">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#hero">Thiệp Mời</a></li>
+                <li><a href="#rsvp">Tham Dự</a></li>
+                <li><a href="#location">Địa Điểm</a></li>
+                <li><a href="#guestbook">Lưu Bút</a></li>
+            </ul>
+        </nav>
+        <div class="header-cta">
+            <button class="btn-primary" onclick="openModal()">
+                <i class="fas fa-download"></i> Nhận Thiệp
+            </button>
+        </div>
+        <div class="menu-toggle"><i class="fas fa-bars"></i></div>
+    </header>
+
+    <!-- 2. HERO SECTION -->
+    <section class="hero" id="hero">
+        <div class="hero-bg-text">GRADUATION<br>CEREMONY</div>
+
+
+
+        <div class="hero-content container">
+            <img src="images/section/sec1.jpg" alt="Hero Section"
+                style="width: 100%; max-width: 800px; border-radius: 20px; box-shadow: 0 15px 40px rgba(0,0,0,0.15); display: block; margin: 0 auto;" />
+        </div>
+    </section>
+
+    <!-- 3. Nút Nhận Thiệp Isolated -->
+    <section class="cta-section">
+        <button class="btn-primary" style="font-size: 1.2rem; padding: 15px 40px;" onclick="openModal()">
+            <i class="fas fa-envelope-open-text"></i> Tải Thiệp Mời Bản Mềm
+        </button>
+    </section>
+
+    <!-- 4. Thư Cảm Ơn -->
+    <section class="container">
+        <div class="thankyou-letter paper-shadow">
+            <h2 class="section-title" style="margin-bottom: 30px;">Thư Cảm Ơn</h2>
+            <div class="thankyou-content">
+                <p>Gửi những người tuyệt vời đã đồng hành cùng Gia Tuệ,</p><br>
+                <p>Nếu bạn nhận được bức thư này, nghĩa là bạn đang giữ một vị trí vô cùng đặc biệt trong hành trình 4
+                    năm qua của Tuệ.</p><br>
+                <p>Nhìn lại chặng đường đại học vừa khép lại, Tuệ thấy mình may mắn hơn bao giờ hết. Đó là một chuỗi
+                    ngày có đủ mọi cung bậc cảm xúc: có những hoài bão rực rỡ, những chiến tích nho nhỏ, nhưng cũng
+                    chẳng thiếu những lúc chông chênh, kiệt sức và hoang mang trước những lựa chọn. Nhưng chính từ những
+                    áp lực ấy, Tuệ mới thấy mình lớn lên và vững vàng hơn từng ngày.</p><br>
+                <p>Tuệ muốn dành lời cảm ơn sâu sắc nhất đến tất cả mọi người. Có những bạn đã cùng Tuệ đồng hành qua
+                    từng môn học, cày deadline từ chiều muộn tới tận 2-3 giờ sáng, cùng than thở rồi lại cùng cười xòa
+                    vì những điều rất giản dị. Có những người anh, người chị, người em, người bạn luôn sẵn sàng lắng
+                    nghe, truyền năng lượng mỗi khi Tuệ nản lòng. Và cả những người lặng lẽ hỗ trợ Tuệ từ phía sau, mỗi
+                    người đều là một mảnh ghép hoàn hảo tạo nên bức tranh thanh xuân đẹp đẽ của Tuệ.</p><br>
+                <p>Bốn năm đại học sẽ chẳng thể trọn vẹn và ý nghĩa nếu thiếu đi sự xuất hiện của các bạn. Mong rằng dù
+                    sau này mỗi đứa một hướng đi, bận rộn với những guồng quay riêng, chúng ta vẫn sẽ mỉm cười khi nhớ
+                    về khoảng thời gian rực rỡ mà mình đã cùng nhau đi qua.</p><br>
+                <p>Buổi lễ tốt nghiệp sắp tới là cột mốc rất quan trọng đối với Tuệ. Tuệ rất mong được đón bạn đến chung
+                    vui, chụp cùng nhau vài tấm hình và lưu giữ khoảnh khắc này. Sự có mặt của bạn chính là món quà ý
+                    nghĩa nhất đối với Tuệ!</p><br>
+                <p>Hẹn sớm gặp bạn nhé! ❤️</p><br>
+                <div class="signature">
+                    <p>Jatwe,</p>
+                    <p style="font-family: var(--font-body); font-size: 0.9rem; font-weight: bold; margin-top: 5px;">
+                        Khóa K28 - Đại học Văn Lang</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. Ảnh & Caption -->
+    <section class="photo-caption-section container">
+        <div class="polaroid polaroid-wrapper">
+            <img src="images/section/TieuBieu.jpg" alt="Kỷ niệm đại học"
+                onerror="this.src='https://placehold.co/400x400?text=Anh+Ky+Niem'">
+            <p class="polaroid-caption">"Thanh xuân có bạn là điều tuyệt vời nhất!"</p>
+        </div>
+    </section>
+
+    <!-- 6. Form RSVP -->
+    <section class="rsvp-section" id="rsvp">
+        <div class="container">
+            <h2 class="section-title">Phản Hồi</h2>
+
+            <div class="rsvp-container">
+                <p style="text-align: center; margin-bottom: 30px; color: #555;">
+                    Để chuẩn bị tốt nhất cho buổi lễ và giúp mọi người vào cổng trường Đại học Văn Lang một cách thuận
+                    tiện nhất, Tuệ xin phép thu thập một vài thông tin nho nhỏ để làm thủ tục check-in nhé.<br><br>
+                    Mọi người yên tâm là thông tin sẽ được bảo mật và chỉ phục vụ duy nhất cho công tác an ninh của sự
+                    kiện.<br><br>
+                    Sau khi hoàn tất biểu mẫu, Tuệ sẽ gửi thư mời điện tử kèm mã QR Check-in trực tiếp qua email cho
+                    từng người nè.
+                </p>
+
+                <form id="rsvpForm" onsubmit="handleRSVPSubmit(event)">
+                    <div class="form-group">
+                        <label for="fullName">Họ và Tên *</label>
+                        <input type="text" id="fullName" class="form-control" required placeholder="Nhập tên của bạn">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email *</label>
+                        <input type="email" id="email" class="form-control" required placeholder="example@email.com">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Số điện thoại *</label>
+                        <input type="tel" id="phone" class="form-control" required pattern="[0-9]{10,11}"
+                            placeholder="0123456789">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Khả năng tham dự *</label>
+                        <div class="attendance-options">
+                            <div class="radio-pill">
+                                <input type="radio" name="attendance" id="status-yes" value="yes" required>
+                                <label for="status-yes">Chắc chắn đến</label>
+                            </div>
+                            <div class="radio-pill">
+                                <input type="radio" name="attendance" id="status-no" value="no">
+                                <label for="status-no">Rất tiếc không thể</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Lời nhắn nhủ (Không bắt buộc)</label>
+                        <textarea id="message" class="form-control" rows="3"
+                            placeholder="Gửi vài lời chúc mừng... (Sẽ được ghim lên bảng lưu bút)"></textarea>
+                    </div>
+
+                    <button type="submit" class="btn-primary" id="submitBtn" style="width: 100%;">Gửi Phản Hồi</button>
+                    <div id="formFeedback" class="form-message"></div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. Lưu bút -->
+    <section class="container" id="guestbook">
+        <span class="eyebrow">GỬI LỜI YÊU THƯƠNG</span>
+        <h2 class="section-title">Lưu Bút</h2>
+
+        <!-- Render động bằng JS -->
+        <div class="guestbook-carousel" id="guestbook-carousel"></div>
+    </section>
+
+    <!-- 8. Gallery phim -->
+    <section class="film-gallery">
+        <h2 class="film-text">NHỮNG KHOẢNG KHẮC TẠI GIẢNG ĐƯỜNG ĐẠI HỌC</h2>
+
+        <div class="marquee-container">
+            <!-- Hàng 1 trượt trái -->
+            <div class="marquee-row slide-left">
+                <div class="gallery-item"><img src="images/album/1IAATTEID_7T4V8V.jpg" alt=""></div>
+                <div class="gallery-item"><img src="images/album/IMG_0314.jpg" alt=""></div>
+                <div class="gallery-item"><img src="images/album/IMG_0410.JPG" alt=""></div>
+                <div class="gallery-item"><img src="images/album/IMG_0432.JPG" alt=""></div>
+                <div class="gallery-item"><img src="images/album/IMG_0433.JPG" alt=""></div>
+                <div class="gallery-item"><img src="images/album/IMG_1715.PNG" alt=""></div>
+                <div class="gallery-item"><img src="images/album/IMG_1716.PNG" alt=""></div>
+                <div class="gallery-item"><img src="images/album/IMG_1717.PNG" alt=""></div>
+                <div class="gallery-item"><img src="images/album/IMG_1718.PNG" alt=""></div>
+                <div class="gallery-item"><img src="images/album/IMG_1719.PNG" alt=""></div>
+                <div class="gallery-item"><img src="images/album/IMG_1720.PNG" alt=""></div>
+                <div class="gallery-item"><img src="images/album/IMG_1721.PNG" alt=""></div>
+                <div class="gallery-item"><img src="images/album/IMG_1722.PNG" alt=""></div>
+                <div class="gallery-item"><img src="images/album/IMG_1723.PNG" alt=""></div>
+                <div class="gallery-item"><img src="images/album/IMG_1724.PNG" alt=""></div>
+                <div class="gallery-item"><img src="images/album/IMG_1726.PNG" alt=""></div>
+                <!-- Clone for infinite scroll -->
+                <div class="gallery-item"><img src="images/album/1IAATTEID_7T4V8V.jpg" alt=""></div>
+                <div class="gallery-item"><img src="images/album/IMG_0314.jpg" alt=""></div>
+                <div class="gallery-item"><img src="images/album/IMG_0410.JPG" alt=""></div>
+                <div class="gallery-item"><img src="images/album/IMG_0432.JPG" alt=""></div>
+                <div class="gallery-item"><img src="images/album/IMG_0433.JPG" alt=""></div>
+                <div class="gallery-item"><img src="images/album/IMG_1715.PNG" alt=""></div>
+                <div class="gallery-item"><img src="images/album/IMG_1716.PNG" alt=""></div>
+                <div class="gallery-item"><img src="images/album/IMG_1717.PNG" alt=""></div>
+                <div class="gallery-item"><img src="images/album/IMG_1718.PNG" alt=""></div>
+                <div class="gallery-item"><img src="images/album/IMG_1719.PNG" alt=""></div>
+                <div class="gallery-item"><img src="images/album/IMG_1720.PNG" alt=""></div>
+                <div class="gallery-item"><img src="images/album/IMG_1721.PNG" alt=""></div>
+                <div class="gallery-item"><img src="images/album/IMG_1722.PNG" alt=""></div>
+                <div class="gallery-item"><img src="images/album/IMG_1723.PNG" alt=""></div>
+                <div class="gallery-item"><img src="images/album/IMG_1724.PNG" alt=""></div>
+                <div class="gallery-item"><img src="images/album/IMG_1726.PNG" alt=""></div>
+            </div>
+
+            <!-- Hàng 2 trượt qua phải -->
+            <div class="marquee-row slide-right">
+                <div class="gallery-item"><img src="images/album/IMG_1727.PNG" alt=""></div>
+                <div class="gallery-item"><img src="images/album/IMG_1730.JPG" alt=""></div>
+                <div class="gallery-item"><img src="images/album/IMG_1732.JPG" alt=""></div>
+                <div class="gallery-item"><img src="images/album/IMG_1733.JPG" alt=""></div>
+                <div class="gallery-item"><img src="images/album/IMG_1734.JPG" alt=""></div>
+                <div class="gallery-item"><img src="images/album/IMG_1735.JPG" alt=""></div>
+                <div class="gallery-item"><img src="images/album/IMG_1736.JPG" alt=""></div>
+                <div class="gallery-item"><img src="images/album/IMG_1737.JPG" alt=""></div>
+                <div class="gallery-item"><img src="images/album/IMG_1738.JPG" alt=""></div>
+                <div class="gallery-item"><img src="images/album/IMG_1968.jpg" alt=""></div>
+                <div class="gallery-item"><img src="images/album/IMG_3009.jpg" alt=""></div>
+                <div class="gallery-item"><img src="images/album/IMG_3015.jpg" alt=""></div>
+                <div class="gallery-item"><img src="images/album/IMG_3036.PNG" alt=""></div>
+                <div class="gallery-item"><img src="images/album/IMG_3060.JPG" alt=""></div>
+                <div class="gallery-item"><img src="images/album/IMG_6391.PNG" alt=""></div>
+                <div class="gallery-item"><img src="images/album/IMG_8672.JPG" alt=""></div>
+                <!-- Clone for infinite scroll -->
+                <div class="gallery-item"><img src="images/album/IMG_1727.PNG" alt=""></div>
+                <div class="gallery-item"><img src="images/album/IMG_1730.JPG" alt=""></div>
+                <div class="gallery-item"><img src="images/album/IMG_1732.JPG" alt=""></div>
+                <div class="gallery-item"><img src="images/album/IMG_1733.JPG" alt=""></div>
+                <div class="gallery-item"><img src="images/album/IMG_1734.JPG" alt=""></div>
+                <div class="gallery-item"><img src="images/album/IMG_1735.JPG" alt=""></div>
+                <div class="gallery-item"><img src="images/album/IMG_1736.JPG" alt=""></div>
+                <div class="gallery-item"><img src="images/album/IMG_1737.JPG" alt=""></div>
+                <div class="gallery-item"><img src="images/album/IMG_1738.JPG" alt=""></div>
+                <div class="gallery-item"><img src="images/album/IMG_1968.jpg" alt=""></div>
+                <div class="gallery-item"><img src="images/album/IMG_3009.jpg" alt=""></div>
+                <div class="gallery-item"><img src="images/album/IMG_3015.jpg" alt=""></div>
+                <div class="gallery-item"><img src="images/album/IMG_3036.PNG" alt=""></div>
+                <div class="gallery-item"><img src="images/album/IMG_3060.JPG" alt=""></div>
+                <div class="gallery-item"><img src="images/album/IMG_6391.PNG" alt=""></div>
+                <div class="gallery-item"><img src="images/album/IMG_8672.JPG" alt=""></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 9. Lưu lại ngày này -->
+    <section class="container" id="location">
+        <h2 class="section-title">Lưu Lại Ngày Này</h2>
+        <div class="save-date-grid">
+            <div class="info-card">
+                <div class="info-item">
+                    <i class="far fa-calendar-alt"></i>
+                    <div>
+                        <h4 style="margin-bottom: 5px;">Thời gian</h4>
+                        <p>10:30<br>Chủ Nhật, Ngày 09 tháng 08 năm 2026</p>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <div>
+                        <h4 style="margin-bottom: 5px;">Địa điểm</h4>
+                        <p>Van Lang University<br>69/68 Đường Đặng Thuỳ Trâm, Phường 13, Bình Thạnh, TP.HCM</p>
+                    </div>
+                </div>
+                <!-- TODO: Đổi href bằng link Google Maps Direction -->
+                <a href="https://maps.google.com" target="_blank" class="btn-primary"
+                    style="margin-top: 20px; width: 100%;">
+                    <i class="fas fa-location-arrow"></i> Mở Bản Đồ Chỉ Đường
+                </a>
+            </div>
+
+            <div class="map-container">
+                <!-- TODO: Thay src bằng link nhúng Google Maps iframe thật -->
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1m2!1s0x317529292e8d3dd1%3A0xf15f5aad773c112b!2sHo%20Chi%20Minh%20City!5e0!3m2!1sen!2s!4v1717000000000!5m2!1sen!2s"
+                    width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- 10. Lưu ý nho nhỏ -->
+    <section class="container" style="background-color: var(--card-bg); padding: 60px; border-radius: 8px;">
+        <span class="eyebrow">THÔNG TIN CẦN BIẾT</span>
+        <h2 class="section-title">Mọi Người Lưu Ý Dùm Tuệ Cái Này Nhen</h2>
+
+        <div class="notes-list">
+            <div class="note-row">
+                <i class="fas fa-parking"></i>
+                <div><strong>Di chuyển & Gửi xe:<br></strong> Vì lễ rất đông người nên <strong>Ưu tiên</strong> di
+                    chuyển xe công nghệ (đặt ở cổng Đặng Thuỳ Trâm nhé) để tránh kẹt xe bạn nha.</div>
+            </div>
+            <div class="note-row">
+                <i class="fas fa-envelope-open"></i>
+                <div><strong>Hỗ trợ nhận thiệp:<br></strong>Nếu đến 1/8 vẫn chưa nhận thư điện tử thì hãy liên hệ ngay
+                    với <strong>Gia Tuệ</strong> hoặc <strong>Quang Long</strong> nhé.</div>
+            </div>
+            <div class="note-row">
+                <i class="fas fa-gift"></i>
+                <div><strong>Quà tặng:<br></strong> Sự hiện diện của bạn đã là món quà quý giá nhất. Xin phép không nhận
+                    hoa/quà cồng kềnh ạ.</div>
+            </div>
+            <div class="note-row">
+                <i class="fas fa-gift"></i>
+                <div><strong>Quan trọng:<br></strong> Mã QR chỉ có hiệu lực check in vô cổng 1 lần, vui lòng không chia
+                    sẻ mã của bạn cho người khác. (Không cho người lạ mượn)</div>
+            </div>
+            <div class="note-row alert-row">
+                <i class="fas fa-exclamation-triangle"></i>
+                <div><strong>Check-in an ninh:<br></strong> vui lòng lưu lại mã QR được gửi qua gmail ( đã tạo ở phần
+                    nhận thiệp ) để được vào khuôn viên trường nhé !</div>
+            </div>
+            <div class="note-row" style="flex-direction: column; align-items: flex-start;">
+                <div style="margin-bottom: 15px;"><i class="fas fa-map-marked-alt"
+                        style="margin-right: 15px; color: var(--accent-dark); font-size: 1.5rem;"></i><strong>Sơ đồ Lễ
+                        Tốt Nghiệp:</strong></div>
+                <img src="images/section/sodotruong.jpg" alt="Sơ đồ Lễ Tốt Nghiệp"
+                    style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
+            </div>
+        </div>
+    </section>
+
+    <!-- 11. Countdown -->
+    <section class="countdown-section container">
+        <span class="eyebrow">ĐẾM NGƯỢC NGÀY TRỌNG ĐẠI CỦA TUỆ</span>
+        <h2 class="section-title">Lễ Tốt Nghiệp - 09/08/2026</h2>
+        <p style="font-family: var(--font-script); font-size: 1.5rem; color: #666;">Diễn ra sau: </p>
+
+        <div class="countdown-timer" id="countdown">
+            <div class="time-box"><span class="time-value" id="days">00</span><span class="time-label">Ngày</span></div>
+            <div class="time-box"><span class="time-value" id="hours">00</span><span class="time-label">Giờ</span></div>
+            <div class="time-box"><span class="time-value" id="minutes">00</span><span class="time-label">Phút</span>
+            </div>
+            <div class="time-box"><span class="time-value" id="seconds">00</span><span class="time-label">Giây</span>
+            </div>
+        </div>
+        <p id="countdown-message"
+            style="display: none; font-size: 1.2rem; font-weight: bold; margin-top: 20px; color: var(--accent-dark);">
+            Sự kiện đang diễn ra hoặc đã kết thúc!
+        </p>
+    </section>
+
+    <!-- 12. Footer -->
+    <footer>
+        <div class="footer-grid">
+            <div>
+                <div class="footer-logo">VLU</div>
+                <p style="font-size: 0.9rem;">Cảm ơn bạn đã là một phần thanh xuân rực rỡ của mình.</p>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/jatwe.g.tuee"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/_jatwe_/"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.tiktok.com/@_jatweee_"><i class="fab fa-tiktok"></i></a>
+                </div>
+            </div>
+            <div>
+                <h4 class="footer-title">Liên Hệ</h4>
+                <p><i class="fas fa-phone-alt"></i> Gia Tuệ: 0786934098<br>Quang Long: 0896472359</p>
+                <p><i class="fas fa-envelope"></i> Gia Tuệ: phantue.280504@gmail.com<br>Quang Long:
+                    lequanglong.dev@gmail.com</p>
+                <p><i class="fas fa-map-marker-alt"></i> 69/68 Đường Đặng Thuỳ Trâm, Bình Thạnh, TP.HCM</p>
+            </div>
+            <div>
+                <h4 class="footer-title">Bản Đồ</h4>
+                <div
+                    style="width: 100%; height: 120px; background: #333; border-radius: 4px; display: flex; justify-content: center; align-items: center; font-size: 0.8rem;">
+                    [Mini Map Placeholder]
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            © 2026 - Phan Nguyễn Gia Tuệ · Đại học Văn Lang
+        </div>
+    </footer>
+
+    <!-- 13. Audio Widget -->
+    <!-- Nhạc Night Changes -->
+    <audio id="bg-music" loop>
+        <source src="music/night_changes.mp3" type="audio/mpeg">
+    </audio>
+
+    <div class="vinyl-player" id="audioToggle">
+        <div class="vinyl-record" id="recordDisc">
+            <div class="music-notes">
+                <span class="music-note" style="--d: 0s;">♪</span>
+                <span class="music-note" style="--d: 0.6s;">♫</span>
+                <span class="music-note" style="--d: 1.2s;">♪</span>
+            </div>
+        </div>
+        <div class="vinyl-sleeve">
+            <div class="sleeve-cutout">
+                <span class="sleeve-text" id="sleeveText">Nhấn để<br>phát nhạc</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- 14. MODAL TẠO THIỆP MỜI -->
+    <div class="modal-overlay" id="inviteModal" tabindex="-1">
+        <div class="modal-content" id="modalContent">
+            <div class="modal-header">
+                <h3>TẠO THIỆP MỜI</h3>
+                <button class="close-btn" onclick="closeModal()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p>Nhập tên của bạn để mình tạo riêng cho bạn một tấm thiệp nhé!</p>
+                <input type="text" id="guestNameInput" class="form-control" placeholder="Ví dụ: Gia Tuệ,...">
+
+                <div class="preview-wrapper">
+                    <!-- DOM để chụp html2canvas -->
+                    <div id="invitePreviewArea">
+                        <img src="images/section/thiep moi.jpg" alt="Thiệp Mời"
+                            style="width: 100%; height: auto; display: block;" crossorigin="anonymous">
+                        <div class="preview-guest" id="previewGuestName"
+                            style="position: absolute; top: 65.5%; left: 50%; transform: translate(-50%, -50%); width: 70%; text-align: center; color: white; font-family: var(--font-heading, sans-serif); font-size: 1rem; font-weight: bold; text-transform: uppercase; border: none; margin: 0; padding: 0; opacity: 1; letter-spacing: 1px;">
+                            Tên bạn</div>
+                    </div>
+                </div>
+
+                <button class="btn-primary" style="width: 100%;" onclick="downloadCustomInvite()">
+                    <i class="fas fa-download"></i> TẢI THIỆP XUỐNG
+                </button>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- =========================================
+         JAVASCRIPT
+         ========================================= -->
+    <script>
+        // --- 0. ENVELOPE INTRO & AUDIO PLAY ---
+        const envelopeTrigger = document.getElementById('envelope-trigger');
+        const envelopeIntro = document.getElementById('envelope-intro');
+        const audio = document.getElementById('bg-music');
+        const audioToggle = document.getElementById('audioToggle');
+        const sleeveText = document.getElementById('sleeveText');
+        let isPlaying = false;
+
+        function playMusic() {
+            if (!audio.querySelector('source').src || audio.querySelector('source').src.includes('index.html')) return;
+            audio.play().then(() => {
+                isPlaying = true;
+                audioToggle.classList.add('playing');
+                sleeveText.innerHTML = 'Đang<br>phát...';
+            }).catch(e => console.log("Không thể play nhạc tự động:", e));
+        }
+
+        function toggleAudio() {
+            if (isPlaying) {
+                audio.pause();
+                audioToggle.classList.remove('playing');
+                sleeveText.innerHTML = 'Nhấn để<br>phát nhạc';
+            } else {
+                playMusic();
+            }
+            isPlaying = !isPlaying;
+        }
+
+        audioToggle.addEventListener('click', toggleAudio);
+
+        envelopeTrigger.addEventListener('click', () => {
+            // Animation mở phong bì
+            envelopeTrigger.classList.add('open');
+
+            // Kích hoạt nhạc (vì đã có user interaction)
+            playMusic();
+
+            // Đợi animation mở xong rồi fade out toàn bộ intro
+            setTimeout(() => {
+                envelopeIntro.style.opacity = '0';
+                envelopeIntro.style.transform = 'scale(1.1)';
+
+                setTimeout(() => {
+                    envelopeIntro.style.display = 'none';
+                    document.body.classList.remove('locked'); // Mở khoá scroll
+                }, 1000);
+            }, 800);
+        });
+
+
+        // --- 1. STICKY HEADER ---
+        const header = document.getElementById('header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) header.classList.add('scrolled');
+            else header.classList.remove('scrolled');
+        });
+
+
+        // --- 7. QUẢN LÝ GUESTBOOK CAROUSEL ---
+        const carousel = document.getElementById('guestbook-carousel');
+
+        // Seed data — demo, sẽ bị thay dần khi có phản hồi thật (Không lưu vào localStorage)
+        const SEED_DATA = [
+            { message: "Chúc bạn tôi tốt nghiệp hồng phát! Tương lai rực rỡ nhé!", status: "yes", name: "BẠN A" },
+            { message: "Bao đêm chạy deadline cuối cùng cũng đến ngày hái quả. Tự hào về cậu!", status: "yes", name: "BẠN B" },
+            { message: "Mãi là anh em tốt! Hôm đó tớ sẽ đến sớm giành chỗ VIP.", status: "yes", name: "BẠN C" },
+            { message: "Tiếc quá hôm đó tớ đi công tác. Chúc cậu mọi điều tốt đẹp nhất nha!", status: "no", name: "BẠN D" }
+        ];
+
+        function getStatusText(status) {
+            if (status === 'yes') return "CHẮC CHẮN ĐẾN";
+            return "RẤT TIẾC KHÔNG THỂ";
+        }
+
+        async function renderGuestbook() {
+            carousel.innerHTML = '<div style="width:100%; text-align:center; padding: 40px;"><i class="fas fa-spinner fa-spin" style="font-size:2rem; color:var(--accent-main);"></i><p style="margin-top:10px; font-family:var(--font-body);">Đang tải lời nhắn...</p></div>';
+            
+            try {
+                const response = await fetch('https://script.google.com/macros/s/AKfycbxXRGpPxStK4jFQjBhwOYeYgp0XeB0I1UsYAEv96rNF1VSJ60EKEmr1qg50OEMWEMV19g/exec');
+                let data = await response.json();
+                
+                carousel.innerHTML = '';
+                
+                let entriesToRender = data.length > 0 ? data : SEED_DATA;
+                // Nhân bản 3 lần để đảm bảo luôn cuộn được (infinite scroll effect)
+                entriesToRender = [...entriesToRender, ...entriesToRender, ...entriesToRender];
+
+                entriesToRender.forEach((entry, index) => {
+                    if (!entry.message || entry.message.trim() === '') return;
+
+                    const note = document.createElement('div');
+                    note.className = 'sticky-note';
+
+                    const statusHtml = entry.status ? `<span class="badge status-${entry.status}">${getStatusText(entry.status)}</span>` : `<span class="badge status-yes" style="background:#ffebee; color:#d32f2f;">Khách mời</span>`;
+
+                    note.innerHTML = `
+                        <div class="washi-tape"></div>
+                        <div class="note-header">
+                            ${statusHtml}
+                            <span class="note-author">• ${entry.name}</span>
+                        </div>
+                        <div class="note-text">"${entry.message}"</div>
+                    `;
+                    carousel.appendChild(note);
+                });
+            } catch (err) {
+                console.error("Error fetching guestbook:", err);
+                carousel.innerHTML = '<div style="width:100%; text-align:center; padding: 20px;"><p>Không thể tải lời nhắn lúc này.</p></div>';
+            }
+        }
+
+        // Gọi render lần đầu
+        renderGuestbook();
+
+        // Auto-scroll JS cho Guestbook (trượt liên tục)
+        let isGuestbookHovered = false;
+        carousel.addEventListener('mouseenter', () => isGuestbookHovered = true);
+        carousel.addEventListener('mouseleave', () => isGuestbookHovered = false);
+        carousel.addEventListener('touchstart', () => isGuestbookHovered = true, { passive: true });
+        carousel.addEventListener('touchend', () => { setTimeout(() => isGuestbookHovered = false, 1500) }, { passive: true });
+
+        function autoScrollGuestbook() {
+            if (!isGuestbookHovered && carousel.scrollWidth > carousel.clientWidth) {
+                carousel.scrollLeft += 1;
+                // Quay lại từ đầu 1/3 quãng đường (vì đã nhân bản 3 lần) để cuộn siêu mượt
+                if (carousel.scrollLeft >= (carousel.scrollWidth / 3) * 2) {
+                    carousel.scrollLeft = carousel.scrollWidth / 3;
+                }
+            }
+            requestAnimationFrame(autoScrollGuestbook);
+        }
+        requestAnimationFrame(autoScrollGuestbook);
+
+
+        // --- 6. RSVP FORM SUBMIT ---
+        function handleRSVPSubmit(event) {
+            event.preventDefault();
+
+            const btn = document.getElementById('submitBtn');
+            const feedback = document.getElementById('formFeedback');
+
+            const formData = {
+                name: document.getElementById('fullName').value,
+                email: document.getElementById('email').value,
+                phone: document.getElementById('phone').value,
+                status: document.querySelector('input[name="attendance"]:checked').value,
+                message: document.getElementById('message').value
+            };
+
+            btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Đang gửi...';
+            btn.disabled = true;
+            feedback.style.display = 'none';
+            feedback.className = 'form-message';
+
+            // Gọi API thật
+            submitRSVP(formData)
+                .then(() => {
+                    feedback.innerText = "Cảm ơn bạn! Phản hồi đã được ghi nhận thành công 🎉";
+                    feedback.classList.add('success');
+                    document.getElementById('rsvpForm').reset();
+
+                    // Nếu có message, cuộn xuống phần guestbook để user thấy ngay
+                    if (formData.message.trim()) {
+                        document.getElementById('guestbook').scrollIntoView({ behavior: "smooth" });
+                    }
+                })
+                .catch(err => {
+                    feedback.innerText = "Có lỗi xảy ra, vui lòng thử lại sau.";
+                    feedback.classList.add('error');
+                    console.error(err);
+                })
+                .finally(() => {
+                    btn.innerHTML = 'Gửi Phản Hồi';
+                    btn.disabled = false;
+                });
+        }
+
+        async function submitRSVP(data) {
+            try {
+                const response = await fetch('https://script.google.com/macros/s/AKfycbxXRGpPxStK4jFQjBhwOYeYgp0XeB0I1UsYAEv96rNF1VSJ60EKEmr1qg50OEMWEMV19g/exec', {
+                    method: 'POST',
+                    body: JSON.stringify(data),
+                    headers: {
+                        'Content-Type': 'text/plain;charset=utf-8',
+                    }
+                });
+                const result = await response.json();
+                
+                if (result.status === 'success') {
+                    if (data.message && data.message.trim() !== '') {
+                        renderGuestbook(); // Load lại data từ sheet mới nhất
+                    }
+                    return Promise.resolve(result);
+                } else {
+                    return Promise.reject(result);
+                }
+            } catch (e) {
+                return Promise.reject(e);
+            }
+        }
+
+
+        // --- 11. COUNTDOWN TIMER ---
+        // TODO: Chỉnh sửa EVENT_DATE thành ngày giờ sự kiện thực tế
+        const EVENT_DATE = "2026-08-09T10:30:00";
+        const countdownDate = new Date(EVENT_DATE).getTime();
+
+        const x = setInterval(function () {
+            const now = new Date().getTime();
+            const distance = countdownDate - now;
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById("days").innerText = days < 10 ? "0" + days : days;
+            document.getElementById("hours").innerText = hours < 10 ? "0" + hours : hours;
+            document.getElementById("minutes").innerText = minutes < 10 ? "0" + minutes : minutes;
+            document.getElementById("seconds").innerText = seconds < 10 ? "0" + seconds : seconds;
+
+            if (distance < 0) {
+                clearInterval(x);
+                document.getElementById("countdown").style.display = "none";
+                document.getElementById("countdown-message").style.display = "block";
+            }
+        }, 1000);
+
+
+        // --- 14. MODAL TẠO THIỆP MỜI (html2canvas) ---
+        const modal = document.getElementById('inviteModal');
+        const inputName = document.getElementById('guestNameInput');
+        const previewName = document.getElementById('previewGuestName');
+
+        function openModal() {
+            modal.style.display = 'flex';
+            inputName.focus();
+        }
+
+        function closeModal() {
+            modal.style.display = 'none';
+        }
+
+        // Close on Esc key or clicking outside
+        window.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && modal.style.display === 'flex') closeModal();
+        });
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) closeModal();
+        });
+
+        // Live preview typing
+        inputName.addEventListener('input', (e) => {
+            const val = e.target.value.trim();
+            if (val) {
+                previewName.textContent = val;
+                previewName.style.opacity = '1';
+                inputName.classList.remove('input-shake');
+            } else {
+                previewName.textContent = "Tên bạn";
+                previewName.style.opacity = '0.5';
+            }
+        });
+
+        // Download logic
+        function downloadCustomInvite() {
+            const nameVal = inputName.value.trim();
+            if (!nameVal) {
+                inputName.classList.add('input-shake');
+                setTimeout(() => inputName.classList.remove('input-shake'), 500);
+                inputName.focus();
+                return;
+            }
+
+            const previewArea = document.getElementById('invitePreviewArea');
+
+            // Dùng html2canvas chụp lại DOM element
+            html2canvas(previewArea, {
+                scale: 2, // Tăng chất lượng ảnh export
+                useCORS: true,
+                backgroundColor: "#fdfaf6", // Khớp với màu nền của preview
+                onclone: function (clonedDoc) {
+                    const clonedName = clonedDoc.getElementById('previewGuestName');
+                    if (clonedName) {
+                        clonedName.style.transform = 'none';
+                        clonedName.style.left = '0';
+                        clonedName.style.width = '100%';
+                        clonedName.style.top = '62%';
+                        clonedName.style.lineHeight = '1';
+                        clonedName.style.display = 'flex';
+                        clonedName.style.justifyContent = 'center';
+                        clonedName.style.alignItems = 'center';
+                    }
+                }
+            }).then(canvas => {
+                const link = document.createElement('a');
+                // Format tên file: thiep-moi-[ten]-timestamp.png
+                const cleanName = nameVal.normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/\s+/g, '-').toLowerCase();
+                link.download = `thiep-moi-${cleanName}-${Date.now()}.png`;
+                link.href = canvas.toDataURL('image/png');
+                link.click();
+            }).catch(err => {
+                console.error("Lỗi khi tạo ảnh:", err);
+                alert("Xin lỗi, có lỗi xảy ra khi tạo thiệp. Hãy thử lại nhé!");
+            });
+        }
+
+    </script>
+</body>
+
+</html>
