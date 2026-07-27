@@ -977,7 +977,7 @@
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 40px;
-            align-items: center;
+            align-items: stretch; /* Đổi thành stretch để 2 cột cao bằng nhau */
         }
 
         @media (max-width: 768px) {
@@ -991,6 +991,9 @@
             padding: 40px;
             border-radius: 8px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }
 
         .info-item {
@@ -1007,7 +1010,8 @@
 
         .map-container {
             width: 100%;
-            height: 300px;
+            height: 100%;
+            min-height: 350px;
             background: #ddd;
             border-radius: 8px;
             overflow: hidden;
@@ -1746,17 +1750,15 @@
                         <p>Van Lang University<br>69/68 Đường Đặng Thuỳ Trâm, Phường 13, Bình Thạnh, TP.HCM</p>
                     </div>
                 </div>
-                <!-- TODO: Đổi href bằng link Google Maps Direction -->
-                <a href="https://maps.google.com" target="_blank" class="btn-primary"
+                <a href="https://www.google.com/maps/search/Van+Lang+University+Campus+3+Dang+Thuy+Tram" target="_blank" class="btn-primary"
                     style="margin-top: 20px; width: 100%;">
                     <i class="fas fa-location-arrow"></i> Mở Bản Đồ Chỉ Đường
                 </a>
             </div>
 
             <div class="map-container">
-                <!-- TODO: Thay src bằng link nhúng Google Maps iframe thật -->
                 <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1m2!1s0x317529292e8d3dd1%3A0xf15f5aad773c112b!2sHo%20Chi%20Minh%20City!5e0!3m2!1sen!2s!4v1717000000000!5m2!1sen!2s"
+                    src="https://maps.google.com/maps?q=Van+Lang+University+Campus+3+Dang+Thuy+Tram&t=&z=16&ie=UTF8&iwloc=&output=embed"
                     width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
                     referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
@@ -1845,9 +1847,11 @@
             </div>
             <div>
                 <h4 class="footer-title">Bản Đồ</h4>
-                <div
-                    style="width: 100%; height: 120px; background: #333; border-radius: 4px; display: flex; justify-content: center; align-items: center; font-size: 0.8rem;">
-                    [Mini Map Placeholder]
+                <div style="width: 100%; height: 120px; border-radius: 4px; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
+                    <iframe
+                        src="https://maps.google.com/maps?q=Van+Lang+University+Campus+3+Dang+Thuy+Tram&t=&z=14&ie=UTF8&iwloc=&output=embed"
+                        width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
             </div>
         </div>
